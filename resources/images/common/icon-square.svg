@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.5.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="レイヤー_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 12 12" style="enable-background:new 0 0 12 12;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#E60012;}
+	.st1{fill:#D6B762;}
+</style>
+<symbol  id="ビュレット1_2" viewBox="-6 -6 12 11.8">
+	<g>
+		<circle class="st0" cx="3.5" cy="-3.5" r="2.5"/>
+	</g>
+	<g>
+		<circle class="st1" cx="-3.5" cy="-3.5" r="2.5"/>
+	</g>
+	<g>
+		<circle class="st1" cx="3.5" cy="3.3" r="2.5"/>
+	</g>
+	<g>
+		<circle class="st0" cx="-3.5" cy="3.3" r="2.5"/>
+	</g>
+</symbol>
+<g>
+	<defs>
+		<rect id="SVGID_1_" x="0" y="0.3" width="12" height="11.3"/>
+	</defs>
+	<clipPath id="SVGID_00000116923155492176997190000013768072831979330209_">
+		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+	</clipPath>
+	<g style="clip-path:url(#SVGID_00000116923155492176997190000013768072831979330209_);">
+		
+			<use xlink:href="#ビュレット1_2"  width="12" height="11.8" id="XMLID_00000043450118176433746500000010325447794061749650_" x="-6" y="-6" transform="matrix(1.0017 0 0 -0.9428 6 6)" style="overflow:visible;"/>
+	</g>
+</g>
+</svg>

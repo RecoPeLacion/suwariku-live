@@ -1,0 +1,150 @@
+@charset "utf-8";
+
+
+/* ==========================================================================
+   INDEX--HEADER
+========================================================================== */
+header {
+    width: 100%;
+    z-index: 29;
+    position: fixed;
+    top: 0;
+	
+    
+    @include flexbox;
+	&.fix {background: rgba(255,255,255,0.8);}
+	.Inner{position: relative; }
+	.Logo__Box{
+		background-color: $color-base; 
+		position: absolute;
+		left: 0;
+		width: 150px;
+		height: 180px;
+        
+		img{width: auto; margin: 15px auto;}
+		@include menu-change {
+			width: 100px;
+			height: 100px;
+			h1 {
+				width: 100%;
+				height: 100%;
+				padding: 5px;
+                a {display: block;width: 100%;height: 100%;}
+                
+				img {height: 100%;margin: 0;margin: 0 auto}
+			}
+		}
+		
+	}
+	nav{color: #fff;position: relative;width: 100%;height: 100%;
+		.Gnav{position: relative; right: 0; top: 0;
+		@include menu-change {top: 100px;}
+		ul{@include flexbox(nowrap);
+			justify-content: flex-end;
+			padding: 40px 0;
+			@include menu-change {
+			display: block;
+			padding: 0;
+			background: rgba(255,255,255,.9);
+			border-top: 2px solid $color-border;
+			}
+			li{ width:25%;max-width: 160px; border-left: 2px solid  $color-border;
+				text-align: center;@include fs(18);
+				@include pc {@include fs(16);}
+				a{padding:0 10%; display: block; color: $color-link;font-weight: 600;width: 100%;height: 100%;
+					@include menu-change {padding: 20px;}
+				}
+				@include menu-change {
+				width:100%;border-left: none;border-bottom: 2px solid $color-border;max-width: inherit;
+				}
+			}
+			li:last-child{border-right: 2px solid  $color-border;
+			@include pc {border-right: none;}}
+		}
+	}
+	@include menu-change {display: none;}
+	}
+	#Nav__Toggle {
+		display: none;
+		@include menu-change {
+		display: block;width: 50px;height: 50px;position: absolute;top: 10px;right: 10px;z-index: 100;border: 2px solid $color-link;padding: 10px;background: #fff;
+		}
+		div {position: relative;
+			span {
+				display: block;height: 3px;background: $color-link;position: absolute;width: 100%;
+				&:firs-child {top: 0;}
+				&:nth-child(2) {top: 12px;}
+				&:last-child {top: 24px;}
+			}
+		}
+	}
+	
+	
+	.Head__Wrapper{
+		position: relative;
+		max-width: 1400px;
+		width: 100%;
+		margin: 0 auto;
+		border-bottom: 1px solid #ccc;
+		
+		#Nav__Toggle {
+			
+			@include menu-change {
+				display: block;
+				width: 30px;
+				height: 30px;
+				position: absolute;
+				top: 40px;
+				right: 10px;
+				z-index: 100;
+				div {
+					position: relative;
+					span {
+						display: block;
+						height: 3px;
+						background: $color-link;
+						position: absolute;
+						width: 100%;
+						left: 0;
+						/*@include css3(transition,0.2s ease-in-out);*/
+						&:first-child {
+							top: 0px;
+							
+						}
+						&:nth-child(2) {
+							top: 12px;
+						}
+						&:last-child {
+							top: 24px;
+						}
+					}
+				}
+				
+			}
+		}
+	}
+	&.open {
+		@include menu-change {
+		display: block;
+		/*nav {display: block;}*/
+		#Nav__Toggle {
+			span {
+			@include css3(transition,0.2s ease-in-out);
+				&:first-child {
+					top: 12px!important;
+					@include css3(transform,rotate(135deg));
+					
+				}
+				&:nth-child(2) {
+					display: none;
+				}
+				&:last-child {
+					top: 12px!important;
+					@include css3(transform,rotate(-135deg));
+					
+				}
+			}
+		}
+		}
+	}
+}

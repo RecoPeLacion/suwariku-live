@@ -1,0 +1,114 @@
+@charset "utf-8";
+
+//Vendor_Prefix
+@mixin css3($property, $value) {
+     @each $prefix in -webkit-, -moz-, '' {
+          #{$prefix}#{$property}: $value;
+     }
+}
+
+//clear
+@mixin cl{
+	display: block;
+    content: "";
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+@mixin link_color($color: $color-link){
+	color: $color;
+	text-decoration: none;
+	line-height: 1;
+	&:hover{
+		opacity: 0.8;
+	}
+}
+
+//flexbox
+@mixin flexbox($value: nowrap){
+	display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+    -webkit-box-lines: multiple;
+    -moz-box-lines: multiple;
+    -webkit-flex-wrap: $value;
+    -moz-flex-wrap: $value;
+    -ms-flex-wrap: $value;
+    flex-wrap: $value;
+}
+@mixin justify($value:space-between){
+  justify-content: $value;
+}
+
+@mixin cal( $property, $value, $par){
+	@each $prefix in -webkit-, '' {
+		@if $prefix == ''{
+			#{$property}:percentage($par/100);
+		}
+          #{$property}:#{$prefix}calc(#{$value}/1400*100%);
+     }
+}
+@mixin cal600( $property, $value, $par){
+	@each $prefix in -webkit-, '' {
+		@if $prefix == ''{
+			#{$property}:percentage($par/100);
+		}
+          #{$property}:#{$prefix}calc(#{$value}/600*100%);
+     }
+}
+
+
+//メディアクエリ $tablet, $spは_setting.scssで定義
+@mixin pc($max-width: $pc) {
+  @media only screen and(max-width: $max-width) {
+    @content;
+  }
+}
+@mixin menu-change($max-width: $menu-change) {
+  @media only screen and(max-width: $max-width) {
+    @content;
+  }
+}
+@mixin tablet($max-width: $tablet) {
+  @media only screen and(max-width: $max-width) {
+    @content;
+  }
+}
+@mixin sp($max-width: $sp) {
+  @media only screen and(max-width: $max-width) {
+    @content;
+  }
+}
+
+//background
+@mixin background($size: cover, $position: center, $repeat: no-repeat){
+	background-size: $size;
+	background-position: $position;
+	background-repeat: $repeat;
+}
+
+//font-family
+@mixin ffgoth{
+	font-family:"游ゴシック","游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium",  "Yu Gothic", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ヒラギノ角ゴ Pro W3","ＭＳ Ｐゴシック", "MS PGothic", "sans-serif";
+}@mixin ffmei{
+	font-family:"メイリオ", Meiryo, Osaka, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif";
+}
+@mixin ffmin{
+font-family: "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho" , serif;
+}
+
+@mixin ffmon{
+font-family:  'Montserrat', sans-serif;
+
+}
+
+
+//font-size
+@mixin fs($size: 16) {
+    font-size: $size + px;
+    font-size: ($size / 10)  + rem;
+}
